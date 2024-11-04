@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient background */
+    color: #4a4a4a;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #e0e0e0;
+    font-size: 1.2rem;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.field {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.field input, .field select {
+    width: 100%;
+    padding: 12px;
+    padding-left: 50px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f7f7f7;
+    transition: all 0.3s;
+}
+
+.field input:focus {
+    border-color: #2575fc;
+    background: #ffffff;
+    outline: none;
+}
+
+.field span {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #888;
+}
+
+.submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #2575fc;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit:hover {
+    background-color: #1a5bbf;
+}
+
+.forgotPassword a {
+    color: #2575fc;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.forgotPassword a:hover {
+    text-decoration: underline;
+}
+
+.socials {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.social {
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    background-color: #f0f0f5;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #888;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social:hover {
+    background-color: #2575fc;
+    color: #ffffff;
+}
+
+.login-alt {
+    text-align: center;
+    margin-top: 10px;
+    color: #666;
+}
+
+.signup {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.signup a {
+    color: #2575fc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+}

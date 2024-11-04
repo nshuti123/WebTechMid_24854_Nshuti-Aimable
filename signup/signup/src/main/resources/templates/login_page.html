@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Entry - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4; /* Light gray background */
+            color: #4a4a4a;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333; /* Dark gray for the title */
+        }
+
+        .login-form {
+            width: 100%;
+            max-width: 400px;
+            background: #ffffff; /* White background for the form */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .field {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .field input {
+            width: 100%;
+            padding: 12px;
+            padding-left: 50px;
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 8px;
+            background: #f7f7f7; /* Light gray background for inputs */
+            transition: all 0.3s;
+        }
+
+        .field input:focus {
+            border-color: #ccc; /* Light gray focus border */
+            background: #ffffff; /* White background on focus */
+            outline: none;
+        }
+
+        .field span {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #888; /* Light gray for icons */
+        }
+
+        .submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #666; /* Light gray button */
+            border: none;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit:hover {
+            background-color: #444; /* Darker gray on hover */
+        }
+
+        .forgotPassword a {
+            color: #666; /* Light gray link */
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .forgotPassword a:hover {
+            text-decoration: underline;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .social {
+            display: inline-flex;
+            width: 50px;
+            height: 50px;
+            background-color: #f0f0f5; /* Very light gray */
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            color: #888; /* Light gray for social icons */
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .social:hover {
+            background-color: #666; /* Light gray hover background */
+            color: #ffffff; /* White text on hover */
+        }
+
+        .login-alt {
+            text-align: center;
+            margin-top: 10px;
+            color: #666; /* Light gray for alternative login text */
+        }
+
+        .signup {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .signup a {
+            color: #666; /* Light gray for signup link */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form method="post" action="/perform_login" class="login-form">
+        <h1>LOGIN <span class="brand">HeRe</span></h1>
+
+        <!-- CSRF Token for security -->
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+        <!-- Error message display -->
+        <div th:if="${param.error}" style="color: red; text-align: center;">Invalid username or password.</div>
+        <div th:if="${param.logout}" style="color: green; text-align: center;">You have been logged out.</div>
+
+        <!-- Username Field -->
+        <div class="field">
+            <span><i class="fas fa-user"></i></span>
+            <input type="text" name="username" placeholder="Username" required>
+        </div>
+
+        <!-- Password Field -->
+        <div class="field">
+            <span><i class="fas fa-lock"></i></span>
+            <input type="password" name="password" placeholder="Password" required>
+        </div>
+
+        <!-- Forgot Password Link -->
+        <div class="forgotPassword">
+            <a href="/forgotPassword" id="forgot-password-link">Forgot Password?</a>
+        </div>
+
+        <!-- Submit Button -->
+        <input type="submit" class="submit" value="LOGIN">
+
+        <!-- Alternative Login Options -->
+        <span class="login-alt">Or Login with</span>
+        <div class="socials">
+            <div class="social" id="instagram"><i class="fab fa-instagram"></i></div>
+            <div class="social" id="twitter"><i class="fab fa-twitter"></i></div>
+            <div class="social" id="google"><i class="fab fa-google"></i></div>
+        </div>
+
+        <!-- Sign-Up Link -->
+        <div class="signup">
+            <p>Don’t have an account? <a href="/register" id="signup-link">Sign up</a></p>
+        </div>
+    </form>
+</div>
+
+<!-- Optional JavaScript -->
+<script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Entry System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4; /* Light gray background */
+            color: #333; /* Dark gray text */
+            margin: 0;
+            display: flex; /* Use flexbox for layout */
+            height: 100vh; /* Full height */
+        }
+        .left-pane {
+            flex: 1; /* Occupies 1 part of the available space */
+            display: flex;
+            align-items: center; /* Center content vertically */
+            justify-content: center; /* Center content horizontally */
+            padding: 2rem; /* Add padding */
+        }
+        .right-pane {
+            flex: 2; /* Occupies 2 parts of the available space */
+            padding: 2rem; /* Add padding */
+            overflow-y: auto; /* Allow scrolling if content overflows */
+        }
+        h1 {
+            color: #333; /* Dark gray for title */
+            margin: 2rem 0;
+            font-size: 2.5rem;
+            text-align: center; /* Center text in the card */
+        }
+        .card {
+            background-color: white; /* White background for the card */
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+            width: 100%; /* Full width */
+            max-width: 400px; /* Max width for the card */
+        }
+        .button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            margin: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            color: white; /* White text */
+            text-decoration: none;
+            background-color: #666; /* Light gray button color */
+            transition: background-color 0.3s, transform 0.2s;
+            font-size: 1.1rem;
+        }
+        .button:hover {
+            background-color: #444; /* Darker gray on hover */
+            transform: scale(1.05); /* Scale effect on hover */
+        }
+        section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: white; /* White background for sections */
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+            width: 100%; /* Full width for sections */
+        }
+        footer {
+            position: relative;
+            bottom: 20px;
+            font-size: 0.9rem;
+            color: #666; /* Light gray text for the footer */
+        }
+    </style>
+</head>
+<body>
+
+<div class="left-pane">
+    <div class="card">
+        <h1>Welcome to Data Entry System!</h1>
+        <a class="button" href="/register">Register</a>
+        <a class="button" href="/login">Login</a>
+    </div>
+</div>
+
+<div class="right-pane">
+    <section>
+        <h2>About Data Entry</h2>
+        <p>We deliver the best range of life hacks according to your choice.</p>
+    </section>
+
+    <section>
+        <h2>Featured Categories</h2>
+        <p>Explore our wide range of categories:</p>
+        <ul>
+            <li>Academic</li>
+            <li>Health</li>
+            <li>Economic</li>
+            <li>Documentary</li>
+            <li>Financial</li>
+            <li>Others</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>How It Works</h2>
+        <p>Getting started with Our System is easy:</p>
+        <ol>
+            <li>Register for an account.</li>
+            <li>Choose your favorite movies and shows.</li>
+            <li>Enjoy unlimited streaming anytime, anywhere!</li>
+        </ol>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Data Entry System. All rights reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>
